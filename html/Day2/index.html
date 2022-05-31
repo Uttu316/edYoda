@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-height, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Day 2</title>
+
+    <style>
+      .third-class {
+        color: white;
+      }
+      .first-class {
+        background-color: blue;
+        height: 20px;
+        display: inline-block;
+        padding: 5px;
+        color: gold;
+      }
+      .second-class {
+        width: 100px;
+      }
+      .child {
+        position: absolute;
+        bottom: 50%;
+        right: 50%;
+        top: 50%;
+        left: 50%;
+        width: 20px;
+        height: 20px;
+        background-color: blue;
+      }
+      .container {
+        background-color: red;
+        position: relative;
+        padding: 20px;
+        height: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome To Day2!</h1>
+
+    <ol style="list-style-type: lower-alpha">
+      <li>Naresh</li>
+      <li>Ruchi</li>
+      <li>Manohar</li>
+    </ol>
+    <ul style="list-style-type: none">
+      <li>Naresh</li>
+      <li>Ruchi</li>
+      <li>Manohar</li>
+    </ul>
+
+    <p style="color: blue; font-size: 20px; background-color: aqua">
+      I am going to have Inline styling
+    </p>
+
+    <div
+      style="
+        background-color: yellow;
+        border: 5px solid blue;
+        height: 150px;
+        width: 150px;
+        box-sizing: content-box;
+        margin-bottom: 20px;
+        border-radius: 100%;
+        box-shadow: 20px 20px 10px black;
+      "
+    >
+      <p style="font-size: 20px; color: red">I am div 1</p>
+    </div>
+
+    <div
+      style="background-color: green; height: 30px; margin: 10px 20px 30px 5px"
+    >
+      <span> I am div 2</span>
+    </div>
+    <div style="background-color: pink; height: 30px">
+      <span> I am div 3</span>
+    </div>
+
+    <div
+      style="background-color: darkgrey; padding: 10px; margin-bottom: 100px"
+    >
+      <div style="background-color: red; height: 20px"></div>
+    </div>
+
+    <div
+      style="
+        background-color: red;
+        height: 100px;
+        display: inline-block;
+        padding: 20px;
+      "
+    >
+      Left
+    </div>
+
+    <div class="first-class second-class">First element</div>
+    <div class="third-class first-class">Second element</div>
+    <div class="container">
+      <div class="child"></div>
+    </div>
+  </body>
+</html>
