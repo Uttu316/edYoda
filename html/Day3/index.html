@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Day 3!</title>
+
+    <style>
+      /*
+        use  scroll-behavior: smooth; with html tag to see smooth scoll behaviour on bookmarking
+        */
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0px;
+      }
+
+      .header {
+        background-color: lightgray;
+        padding: 8px 10px;
+      }
+      .link {
+        padding: 8px;
+        border: 2px solid #000;
+        text-align: center;
+        margin: 0px 4px;
+        display: inline-block;
+        border-radius: 8px;
+        text-decoration: none;
+        color: red;
+      }
+      .section {
+        background-color: greenyellow;
+        margin-top: 20px;
+      }
+      .right-menu {
+        float: right;
+      }
+      #one {
+        background-color: red;
+        height: 200px;
+      }
+      #two {
+        background-color: pink;
+        height: 200px;
+      }
+      #three {
+        background-color: green;
+        height: 200px;
+      }
+      .btn-section {
+        background-color: lightgreen;
+      }
+
+      .btn {
+        background-color: green;
+        padding: 6px 10px;
+        border-radius: 20px;
+        margin: 20px;
+        border: 1px solid white;
+        width: 100px;
+        text-transform: uppercase;
+        font-size: 8px;
+        color: white;
+        cursor: pointer;
+        box-shadow: 10px 10px 20px pink;
+      }
+      .btn:hover {
+        background-color: orange;
+      }
+      .circle {
+        height: 5px;
+        width: 5px;
+        border-radius: 50%;
+        background-color: red;
+        display: inline-block;
+        margin-left: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <a href="/html/Day3/index.html" class="link">Home</a>
+      <a href="/html/Day3/about.html" class="link">About</a>
+      <a href="/html/Day3/contact.html" class="link">Contact</a>
+      <div class="right-menu">
+        <a href="https://github.com/Uttu316/edYoda" target="_blank" class="link"
+          >Github</a
+        >
+        <a
+          href="https://www.linkedin.com/in/utkarsh-gupta-032223147/"
+          class="link"
+          target="_blank"
+          >Linkedin</a
+        >
+      </div>
+    </div>
+    <div class="section"><h1>I am home</h1></div>
+    <div class="tabs">
+      <a href="#one" class="">One</a>
+      <a href="#two" class="">Two</a>
+      <a href="#three" class="">Three</a>
+    </div>
+    <div class="section-2" id="one">
+      <h2>One 1</h2>
+    </div>
+    <div class="section-2" id="two">
+      <h2>One 2</h2>
+    </div>
+    <div class="section-2" id="three">
+      <h2>One 3</h2>
+    </div>
+    <div class="btn-section">
+      <a class="" href="https://github.com/Uttu316/edYoda">
+        <button class="btn">
+          <span>Continue</span>
+          <div class="circle"></div>
+        </button>
+      </a>
+    </div>
+  </body>
+</html>
