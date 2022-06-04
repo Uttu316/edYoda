@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Day5</title>
+  </head>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body,
+    p {
+      margin: 0;
+    }
+    .header {
+      background-color: lightgoldenrodyellow;
+      padding: 10px 10px;
+    }
+    .nav {
+      margin: 0 auto;
+      text-align: center;
+    }
+    .hero-banner {
+      position: relative;
+    }
+    .hero-banner img {
+      width: 100%;
+      height: 250px;
+    }
+    .container {
+      background-color: lightblue;
+      padding: 10px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .circle {
+      height: 175px;
+      width: 175px;
+      background-color: whitesmoke;
+      border-radius: 100%;
+      position: absolute;
+      top: 30px;
+      right: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .circle p {
+      text-align: center;
+      color: brown;
+      font-size: 22px;
+      font-family: Arial;
+    }
+    .card {
+      background-color: white;
+      min-width: 150px;
+      padding: 8px;
+      margin: 10px;
+      box-shadow: 10px 10px 5px gray;
+      border-radius: 8px;
+      max-width: 25%;
+    }
+    .left {
+      width: 30%;
+      background-color: lightcyan;
+    }
+    .right {
+      display: inline-block;
+    }
+    .card img {
+      height: 150px;
+      width: 100%;
+      border-radius: 8px;
+    }
+    .btn {
+      background-color: orange;
+      border-radius: 4px;
+      border: none;
+      margin: 10px 0px;
+      padding: 4px 8px;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background-color: blueviolet;
+    }
+    footer {
+      background-color: gray;
+      padding: 20px;
+      text-align: center;
+      color: wheat;
+    }
+    .layout {
+      display: flex;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0px;
+    }
+    ul li {
+      padding: 10px 12px;
+      background-color: antiquewhite;
+      width: 100%;
+      border-bottom: 1px solid gray;
+      cursor: pointer;
+    }
+
+    li:hover {
+      background-color: bisque;
+    }
+    #about {
+      height: 200px;
+      padding: 10px;
+      background-color: pink;
+      text-align: center;
+    }
+  </style>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+    <div class="hero-banner">
+      <img
+        class=""
+        src="https://image.shutterstock.com/image-photo/light-bulbs-on-dark-wooden-260nw-354086042.jpg"
+      />
+      <div class="circle">
+        <p>Hello</p>
+      </div>
+    </div>
+    <div class="layout">
+      <div class="left">
+        <ul>
+          <li><a href="" class="link">Photos</a></li>
+          <li><a href="" class="link">Videos</a></li>
+          <li><a href="" class="link">Settings</a></li>
+        </ul>
+      </div>
+      <div class="right">
+        <div class="container">
+          <div class="card">
+            <img
+              src="https://static.remove.bg/remove-bg-web/035676ee65d6ce9f128769532ffdff315f3005c7/assets/start-1abfb4fe2980eabfbbaaa4365a0692539f7cd2725f324f904565a9a744f8e214.jpg"
+            />
+            <b>Lisa hayne</b>
+            <p>I am a girl, Woking professional on a trip</p>
+            <button class="btn">Linkedin</button>
+          </div>
+          <div class="card">
+            <img
+              src="https://static.remove.bg/remove-bg-web/035676ee65d6ce9f128769532ffdff315f3005c7/assets/start-1abfb4fe2980eabfbbaaa4365a0692539f7cd2725f324f904565a9a744f8e214.jpg"
+            />
+            <b>Lisa hayne</b>
+            <p>I am a girl, Woking professional on a trip</p>
+            <button class="btn">Linkedin</button>
+          </div>
+          <div class="card">
+            <img
+              src="https://static.remove.bg/remove-bg-web/035676ee65d6ce9f128769532ffdff315f3005c7/assets/start-1abfb4fe2980eabfbbaaa4365a0692539f7cd2725f324f904565a9a744f8e214.jpg"
+            />
+            <b>Lisa hayne</b>
+            <p>I am a girl, Woking professional on a trip</p>
+            <button class="btn">Linkedin</button>
+          </div>
+          <div class="card">
+            <img
+              src="https://static.remove.bg/remove-bg-web/035676ee65d6ce9f128769532ffdff315f3005c7/assets/start-1abfb4fe2980eabfbbaaa4365a0692539f7cd2725f324f904565a9a744f8e214.jpg"
+            />
+            <b>Lisa hayne</b>
+            <p>I am a girl, Woking professional on a trip</p>
+            <button class="btn">Linkedin</button>
+          </div>
+        </div>
+        <div id="about">
+          <h2>About</h2>
+        </div>
+      </div>
+    </div>
+    <footer id="contact">
+      <span>Footer</span>
+    </footer>
+  </body>
+</html>
