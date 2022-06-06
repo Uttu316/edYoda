@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Day 6</title>
+  </head>
+  <style>
+    .container {
+      padding: 8px;
+      border: 2px solid red;
+      display: flex;
+      flex-direction: row;
+
+      /* justify-content: space-evenly; */
+
+      /* justify-content: flex-start;
+      justify-content: flex-end;
+      justify-content: space-between;
+      justify-content: space-around; */
+      align-items: center;
+      flex-wrap: wrap-reverse;
+    }
+    .item {
+      background-color: orange;
+      height: 75px;
+      margin: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      flex-grow: 1;
+    }
+    #two {
+      flex-grow: 4;
+      /* flex-shrink: 3; */
+      background-color: red;
+    }
+    #seven {
+      flex-grow: 2;
+      background-color: gray;
+      /* flex: 1 0 200px */
+    }
+  </style>
+  <body>
+    <h1>Welcome to Day6</h1>
+
+    <div class="container">
+      <div class="item">1</div>
+      <div class="item" id="two">2</div>
+      <div class="item" id="three">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+      <div class="item" id="seven">7</div>
+      <div class="item">8</div>
+      <div class="item">9</div>
+      <div class="item">10</div>
+      <div class="item">11</div>
+      <div class="item">12</div>
+    </div>
+  </body>
+</html>
