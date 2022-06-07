@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Day 7</title>
+    <style>
+      body,
+      p,
+      ul,
+      h3 {
+        margin: 0;
+        padding: 0px;
+      }
+      header {
+        background-color: white;
+        box-shadow: 0px 10px 10px lightgray;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 0px;
+      }
+      .logo {
+        width: 100px;
+        height: 40px;
+        margin: 0px 10px;
+      }
+      .logo img {
+        height: 100%;
+        width: 100%;
+      }
+      nav {
+        margin: 0px 10px;
+      }
+      nav ul {
+        display: flex;
+        list-style-type: none;
+      }
+      nav ul li {
+        padding: 8px;
+      }
+      nav ul li a {
+        text-decoration: none;
+        color: brown;
+      }
+      nav ul li a:hover {
+        text-decoration: underline;
+      }
+      .hero-banner {
+        height: 250px;
+        width: 100%;
+      }
+      .hero-image {
+        height: 100%;
+        width: 100%;
+      }
+      .detail-layout {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .side-bar {
+        width: 30%;
+        background-color: lightblue;
+      }
+      .side-bar ul {
+        list-style-type: none;
+      }
+      .side-bar ul li {
+        padding: 8px;
+        border-bottom: 1px solid grey;
+      }
+      .side-bar ul li a {
+        display: flex;
+        align-items: center;
+      }
+      .side-bar ul li img {
+        height: 20px;
+        width: 20px;
+        margin-right: 10px;
+      }
+      .side-bar h3 {
+        text-align: center;
+      }
+      .article-container {
+        padding: 10px;
+        width: 65%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .article-container table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      .article-container table td,
+      th {
+        border: 1px dotted grey;
+        text-align: center;
+      }
+      footer {
+        background-color: black;
+        color: white;
+        text-align: center;
+        padding: 20px 40px;
+      }
+      details {
+        margin: 10px 0px;
+      }
+      details summary {
+        border: 1px solid lightblue;
+        cursor: pointer;
+      }
+      details p {
+        margin-top: 10px;
+        border: 1px solid lightgrey;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img
+          class=""
+          src="https://cdn.mos.cms.futurecdn.net/BVb3Wzn9orDR8mwVnhrSyd.jpg"
+        />
+      </div>
+      <nav>
+        <ul>
+          <li>
+            <a href=""><span> Home </span></a>
+          </li>
+          <li>
+            <a href=""><span> About </span></a>
+          </li>
+          <li>
+            <a href=""><span> Contacts </span></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="hero-banner">
+        <img
+          src="https://images.deliveryhero.io/image/fd-hk/LH/w7ci-hero.jpg"
+          class="hero-image"
+        />
+      </section>
+      <section class="detail-layout">
+        <aside class="side-bar">
+          <h3>Varities</h3>
+          <ul>
+            <li>
+              <a
+                ><img
+                  class="icon"
+                  src="https://img.icons8.com/color/480/vegetarian-food-symbol.png"
+                />
+                <span>Veg</span></a
+              >
+            </li>
+            <li>
+              <a
+                ><img
+                  class="icon"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Non_veg_symbol.svg/1200px-Non_veg_symbol.svg.png"
+                />
+                <span>Non veg</span></a
+              >
+            </li>
+          </ul>
+        </aside>
+        <article class="article-container">
+          <table>
+            <caption>
+              Macdonal Menu
+            </caption>
+            <tr>
+              <th>Name</th>
+              <th>Price</th>
+            </tr>
+            <tr>
+              <td>Margerrita</td>
+              <td>80</td>
+            </tr>
+            <tr>
+              <td>Tomato</td>
+              <td>90</td>
+            </tr>
+            <tr>
+              <td>Goldern Corn <mark>10% off</mark></td>
+              <td>150</td>
+            </tr>
+          </table>
+          <details>
+            <summary>Margerrita</summary>
+            <p>I am Margerrita Pizaa of 80 Rs</p>
+          </details>
+          <details>
+            <summary>Tomato</summary>
+            <p>I am Tomato Pizaa of 90 Rs</p>
+          </details>
+          <details>
+            <summary>Goldern corn</summary>
+            <p>I am Golder Corn Pizza of 150 Rs</p>
+          </details>
+        </article>
+      </section>
+    </main>
+    <footer>I am footer</footer>
+  </body>
+</html>
