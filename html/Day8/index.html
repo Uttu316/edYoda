@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Day8!</title>
+    <style>
+      body,
+      h4,
+      p {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <div>
+        <label for="firstname"> First Name: </label>
+
+        <input
+          type="text"
+          id="firstname"
+          name="firstname"
+          maxlength=""
+          value=""
+        />
+      </div>
+      <div>
+        <label for="lastname"> Last Name: </label>
+        <input type="text" id="lastname" name="lastname" value="" />
+      </div>
+      <div>
+        <label for="email"> Email: </label>
+        <input type="email" id="email" name="email" value="" />
+      </div>
+      <div>
+        <label for="phone-number"> Phone Number: </label>
+        <input
+          type="number"
+          max="10"
+          min="0"
+          id="phone-number"
+          name="phone-number"
+          value=""
+        />
+      </div>
+      <div>
+        <h4>Gender</h4>
+        <label for="male"> Male: </label>
+        <input type="radio" name="gender" id="male" value="male" />
+        <label for="female">Female : </label>
+        <input type="radio" name="gender" id="female" value="female" />
+        <label for="other"> Other: </label>
+        <input type="radio" name="gender" id="other" value="other" />
+      </div>
+      <div>
+        <label for="18+"> Is eligible: </label>
+        <input type="checkbox" name="18+" id="18+" value="" />
+      </div>
+
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" value="" />
+      </div>
+      <div>
+        <label for="confirm-password">Confirm password:</label>
+        <input
+          type="password"
+          name="confirm-password"
+          id="confirm-password"
+          value=""
+        />
+      </div>
+      <div>
+        <label for="color">Select color:</label>
+        <input type="color" name="color" id="color" value="" />
+      </div>
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
