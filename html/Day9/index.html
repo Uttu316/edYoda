@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Day9!</title>
+    <style>
+      * {
+        margin: 0;
+      }
+      body {
+        background-color: #f2f6ff;
+      }
+      header {
+        background-color: white;
+        box-shadow: 10px 10px 5px lightgray;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+      }
+      .logo {
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 20px;
+        color: blue;
+      }
+      .right-menu {
+        display: flex;
+        align-items: center;
+      }
+      header .right-menu .avatar {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+      }
+      .avatar-img {
+        height: 100%;
+        width: 100%;
+      }
+      .bell-icon {
+        margin: 0px 10px;
+      }
+      .welcome-message {
+        margin: 0px 10px;
+      }
+
+      main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+        margin-bottom: 30px;
+      }
+      .form-container {
+        background-color: white;
+        border-radius: 8px;
+        padding: 20px;
+        width: 50%;
+        box-shadow: 4px 4px 10px lightgray;
+      }
+      .form-container h3 {
+        margin-bottom: 10px;
+      }
+      .form-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px 0px;
+      }
+      .required {
+        color: red;
+        font-size: 10px;
+      }
+      .input-box {
+        width: 50%;
+      }
+      .text-input {
+        border: 1px solid lightgray;
+        border-radius: 4px;
+        width: 100%;
+        padding: 2px;
+      }
+
+      input[type="submit"] {
+        background-color: purple;
+        border-radius: 20px;
+        border: none;
+        padding: 8px 20px;
+        cursor: pointer;
+        color: white;
+        text-transform: uppercase;
+        display: flex;
+        margin: 10px auto;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <span>edyoda</span>
+      </div>
+      <div class="right-menu">
+        <div class="bell-icon">
+          <i class="fa-solid fa-bell"></i>
+        </div>
+        <div class="welcome-message">
+          <span>Hi! Utkarsh Gupta</span>
+        </div>
+        <div class="avatar">
+          <img
+            class="avatar-img"
+            src="https://e7.pngegg.com/pngimages/799/987/png-clipart-computer-icons-avatar-icon-design-avatar-heroes-computer-wallpaper-thumbnail.png"
+          />
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="form-container">
+        <h3>Contact Support</h3>
+        <form>
+          <fieldset>
+            <legend align="left">Support</legend>
+            <div class="form-item">
+              <div class="label-box">
+                <label for="name">Name<sup class="required">*</sup></label>
+              </div>
+              <div class="input-box">
+                <input
+                  autocomplete="name"
+                  class="text-input"
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Enter name"
+                  required="true"
+                />
+              </div>
+            </div>
+            <div class="form-item">
+              <div class="label-box">
+                <label for="email">Email<sup class="required">*</sup></label>
+              </div>
+              <div class="input-box">
+                <input
+                  class="text-input"
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Enter email"
+                  required="true"
+                  autofocus="true"
+                />
+              </div>
+            </div>
+            <div class="form-item">
+              <div class="label-box">
+                <label for="mobile">Mobile<sup class="required">*</sup></label>
+              </div>
+              <div class="input-box">
+                <input
+                  class="text-input"
+                  type="number"
+                  id="mobile"
+                  name="mobile"
+                />
+              </div>
+            </div>
+            <div class="form-item">
+              <div class="label-box">
+                <label for="subject"
+                  >Subject<sup class="required">*</sup></label
+                >
+              </div>
+              <div class="input-box">
+                <input
+                  class="text-input"
+                  type="text"
+                  id="subject"
+                  name="subject"
+                />
+              </div>
+            </div>
+            <div class="form-item">
+              <div class="label-box">
+                <label for="batch">Batch<sup class="required">*</sup></label>
+              </div>
+              <div class="input-box">
+                <select class="text-input" name="batch" id="batch">
+                  <option value="none">None</option>
+                  <optgroup label="FrontEnd Batch">
+                    <option value="a">Bacth A</option>
+                    <option value="b">Bacth B</option>
+                  </optgroup>
+                  <optgroup label="Backend Batch">
+                    <option value="c">Bacth C</option>
+                    <option value="d">Bacth D</option>
+                  </optgroup>
+                </select>
+              </div>
+            </div>
+            <div class="form-item">
+              <div class="label-box">
+                <label for="category"
+                  >Category<sup class="required">*</sup></label
+                >
+              </div>
+              <div class="input-box">
+                <select class="text-input" name="category" id="category">
+                  <option value="none">None</option>
+                  <option value="password">Payment</option>
+                  <option value="attendance">Attendance</option>
+                  <option value="sess">Session</option>
+                  <option value="acc">Access</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-item">
+              <div class="label-box">
+                <label for="sub-category"
+                  >Sub Category<sup class="required">*</sup></label
+                >
+              </div>
+              <div class="input-box">
+                <input list="sub-category" class="text-input" />
+                <datalist name="sub-category" id="sub-category">
+                  <option value="none">None</option>
+                  <option value="id">Id card</option>
+                  <option value="Pan Card">Pan card</option>
+                  <option value="sess">Team Access</option>
+                  <option value="acc">Dashboard Access</option>
+                </datalist>
+              </div>
+            </div>
+            <div class="form-item">
+              <div class="label-box">
+                <label for="description"
+                  >Description<sup class="required">*</sup></label
+                >
+              </div>
+              <div class="input-box">
+                <textarea
+                  class="text-input"
+                  type="text"
+                  id="description"
+                  name="description"
+                  rows="6"
+                >
+                </textarea>
+              </div>
+            </div>
+            <div class="form-item">
+              <div class="label-box">
+                <label for="file"
+                  >Attach File<sup class="required">*</sup></label
+                >
+              </div>
+              <div class="input-box">
+                <input
+                  class="text-input"
+                  type="file"
+                  multiple="true"
+                  id="file"
+                  name="file"
+                />
+              </div>
+            </div>
+            <div class="form-item">
+              <div class="label-box">
+                <label for="dob"
+                  >Date of Birth<sup class="required">*</sup></label
+                >
+              </div>
+              <div class="input-box">
+                <input class="text-input" type="date" id="dob" name="dob" />
+              </div>
+            </div>
+            <div class="form-item">
+              <div class="label-box">
+                <label for="age">Age<sup class="required">*</sup></label>
+              </div>
+              <div class="input-box">
+                <input
+                  class="text-input"
+                  min="0"
+                  max="100"
+                  step="10"
+                  type="range"
+                  id="age"
+                  name="age"
+                />
+              </div>
+            </div>
+          </fieldset>
+
+          <input type="submit" value="Submit" />
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
