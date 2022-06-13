@@ -1,0 +1,46 @@
+* {
+  text-align: center;
+}
+h3 {
+  color: lightgreen;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.external-styling {
+  font-size: 32px;
+}
+
+.box {
+  height: 20px;
+  width: 30px;
+  padding: 40px;
+
+  margin: 20px;
+  background-color: red;
+  box-sizing: content-box;
+
+  border: 10px solid green;
+
+  border-width: 10px;
+  border-style: solid;
+  border-color: green;
+
+  border-bottom: 10px solid green;
+
+  border-radius: 20px;
+
+  border-top-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+
+  cursor: zoom-out;
+}
+
+span {
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-decoration: line-through;
+  word-spacing: 20px;
+  line-height: 10px;
+  background-color: red;
+}
