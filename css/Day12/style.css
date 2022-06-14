@@ -1,0 +1,157 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+body {
+  margin: 20px;
+}
+.box1 {
+  display: inline;
+}
+
+.box2 {
+  display: none;
+}
+
+.box3 {
+}
+
+.dropdown {
+  padding: 8px;
+  border: 1px solid lightgray;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.dropdown-wrapper {
+  border-radius: 4px;
+  border: 1px solid lightgray;
+  max-width: 150px;
+  margin-top: 5px;
+  display: none;
+}
+
+.dropdown-wrapper ul {
+  list-style-type: none;
+}
+
+.dropdown-wrapper ul li {
+  padding: 4px 8px;
+
+  border-bottom: 1px solid lightgray;
+  cursor: pointer;
+}
+.hover-wrapper {
+  display: inline-block;
+  margin-top: 20px;
+}
+.hover-wrapper:hover .dropdown-wrapper {
+  display: block;
+}
+
+.hidden-box {
+  background-color: gold;
+  padding: 30px;
+  margin: 20px;
+  visibility: hidden;
+}
+
+.visible-box {
+  background-color: gold;
+  padding: 30px;
+  margin: 20px;
+}
+
+.box {
+  height: 200px;
+  width: 200px;
+  text-align: center;
+  margin: 20px;
+}
+
+.box img {
+  height: 100%;
+  width: 100%;
+}
+
+.static-box {
+  height: 200px;
+  width: 200px;
+  background-color: red;
+  text-align: center;
+}
+
+.static-box img {
+  height: 100%;
+  width: 100%;
+  position: static;
+}
+
+.relative-box {
+  height: 200px;
+  width: 200px;
+  background-color: lightblue;
+  text-align: center;
+}
+
+.relative-box img {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  left: 20px;
+  bottom: 20px;
+}
+
+.absolute-box {
+  background-color: lightblue;
+  position: relative;
+  width: 300px;
+  height: 400px;
+}
+
+.absolute-box img {
+  position: absolute;
+  bottom: 50%;
+  right: 0px;
+  left: 45%;
+  top: 50%;
+
+  width: 50px;
+  height: 50px;
+}
+
+.icon-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #0048ff;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  fill: white;
+}
+
+.large-box {
+  height: 3000px;
+  background-color: gray;
+}
+
+.sticky-box {
+  position: sticky;
+  top: 10px;
+}
+
+.overflow-box {
+  height: 600px;
+  width: 400px;
+  overflow: hidden;
+}
+
+.overflow-box img {
+  height: 800px;
+  width: 600px;
+}
