@@ -1,0 +1,20 @@
+body {
+  background-color: lightblue;
+}
+
+main {
+  height: 400px;
+  width: 100%;
+  background-color: lightcyan;
+  background-image: url("https://image.shutterstock.com/image-photo/pet-dog-background-small-size-260nw-1487208704.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  color: wheat;
+}
+
+section {
+  height: 200px;
+  background-color: chocolate;
+}

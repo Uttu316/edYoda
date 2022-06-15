@@ -1,0 +1,21 @@
+h2 {
+  /* horizontal vertical blur color  */
+  text-shadow: 4px 0px 8px red, 6px 2px 2px blue;
+}
+.card {
+  width: 70px;
+  text-align: center;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 2px 2px 4px #ccc;
+}
+
+.card img {
+  max-height: 80px;
+  width: 100%;
+}
+
+.card p {
+  margin: 0px;
+}

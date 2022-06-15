@@ -1,0 +1,42 @@
+/* descendant selector */
+div p {
+  background-color: red;
+}
+
+.great-parent .child {
+  color: blue;
+}
+
+/* immediate child selector */
+div > p {
+  background-color: purple;
+}
+
+aside > p {
+  background-color: brown;
+}
+
+/* adjacent sibling selector */
+
+div + p {
+  background-color: green;
+}
+
+/* general sibling selector */
+
+h2 ~ p {
+  background-color: gold;
+}
+
+/* common selectore */
+section:first-child {
+}
+
+section:last-child {
+}
+
+section:nth-child(2) {
+}
+
+section:nth-last-child(1) {
+}
