@@ -1,0 +1,192 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Raleway", sans-serif;
+}
+body {
+  background-color: #f2f6ff;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  background-color: white;
+  box-shadow: 2px 2px 2px #ccc;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+main {
+  margin-top: 80px;
+}
+.header-left {
+  margin-right: 20px;
+}
+
+.header-left > span {
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: 700;
+
+  background-image: linear-gradient(to left, #0048ff, #0096ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.header-right {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-right > span {
+  font-size: 10px;
+  color: gray;
+  margin-right: 50px;
+  width: 200px;
+}
+
+.header-btn {
+  border: none;
+  border-radius: 20px;
+  padding: 10px 15px;
+  font-size: 10px;
+  color: white;
+  background-image: linear-gradient(to left, #0048ff, #0096ff);
+  cursor: pointer;
+}
+
+#footer-sticker {
+  height: 30px;
+  width: 30px;
+  background-color: #0048ff;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  box-shadow: 0px 8px 8px #ccc;
+  border-radius: 4px;
+  z-index: 3;
+}
+
+#footer-sticker .left-triangle {
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+
+  border-right: 5px solid #0048ff;
+  position: absolute;
+  left: -4px;
+}
+
+.container {
+  display: flex;
+  max-width: 80%;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.card {
+  width: 30%;
+  border: 1px solid skyblue;
+  border-radius: 4px;
+  margin: 10px 10px;
+  overflow: hidden;
+  background-color: white;
+  max-width: 360px;
+  min-width: 200px;
+}
+
+.card > img {
+  height: 175px;
+  width: 100%;
+}
+
+.card > h2 {
+  margin: 10px 20px 0px 20px;
+  font-size: 15px;
+  font-weight: 700;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.card-info {
+  margin: 0px 20px;
+  font-size: 12px;
+  margin-top: 8px;
+}
+.card-info :first-child {
+  color: #0096ff;
+}
+
+.card-info + p {
+  margin: 10px 20px;
+  font-size: 12px;
+  color: gray;
+
+  /* to add ellipsis text for multiple line but it is not supported for all browsers */
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* try changin this number to see line diffrence*/
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.mobile-header {
+  display: none;
+  background-color: aquamarine;
+}
+.mobile-header .header-right i {
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.desktop-header {
+  display: flex;
+  background-color: purple;
+}
+
+#footer-box {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: black;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  z-index: 2;
+  display: block;
+}
+
+@media screen and (max-width: 900px) {
+  .card {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .card {
+    width: 100%;
+  }
+  header {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .mobile-header {
+    display: flex;
+  }
+  .desktop-header {
+    display: none;
+  }
+}
+
+.card:hover {
+  box-shadow: 4px 4px 8px #ccc;
+  cursor: pointer;
+}
