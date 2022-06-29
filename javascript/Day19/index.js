@@ -148,3 +148,13 @@ var numberB = 1;
 var result = numberA + --numberB;
 
 console.log(result, numberB);
+
+var result = 5 > 4 ? "I am greater" : "I am smaller";
+
+var number = 10;
+var string = "2";
+console.log(String(number)); // Number->String
+console.log(Number(string)); // string->Number
+console.log(Number(true)); //Boolean->Number
+console.log(Boolean(0)); //Number->Boolean
+console.log(Boolean("s")); //String -> Boolean
