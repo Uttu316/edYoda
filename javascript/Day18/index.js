@@ -50,7 +50,7 @@ console.log(name.trim());
 
 var fullName = "utkarsh gupta 23";
 
-console.log(fullName.split("-"));
+console.log(fullName.split(" "));
 
 
 
@@ -115,7 +115,6 @@ variable = 10;
 
 
 var nullish = null;
-
 
 
 
