@@ -13,6 +13,8 @@ var student = {
   },
 };
 
+console.log(student.getName());
+
 console.log(student.parent.getName());
 
 let counter = {
