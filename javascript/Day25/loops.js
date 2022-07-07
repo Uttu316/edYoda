@@ -340,3 +340,17 @@ pyramidLeft(5);
 // "***"
 // "****"
 // "*****"
+
+const items = [10, 20, 30];
+
+for (let i = 0; i < items.length; i++) {
+  console.log(items[i]);
+}
+
+for (let i in items) {
+  console.log(items[i]);
+}
+
+for (let each_item of items) {
+  console.log(each_item);
+}
