@@ -1,0 +1,16 @@
+#top-heading {
+  font-size: 22px;
+}
+
+#main-table {
+  text-align: center;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+#main-table tr,
+#main-table td,
+#main-table th {
+  border: 1px solid grey;
+  padding: 8px;
+}

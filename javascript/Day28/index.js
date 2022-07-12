@@ -102,6 +102,5 @@ else
     return false    
 */
 };
-
 const isAnagram = check_is_anagram("LISTEN", "SILENT");
 console.log(isAnagram);

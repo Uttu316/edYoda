@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Day 29</title>
+    <link href="./style.css" type="text/css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <h1 id="top-heading">Welcome to Day 29</h1>
+    <h2 id="sub-heading">
+      <span class="text green_clr">Hola! to javascript</span>
+      <span class="text green_clr">I am sibling of span</span>
+      <div>
+        <span class="bold"><b>I am Bold text</b> </span>
+      </div>
+    </h2>
+
+    <table id="main-table">
+      <tr class="row">
+        <th class="col-head">Subject</th>
+        <th class="col-head">Percentage %</th>
+      </tr>
+      <tr class="row">
+        <td class="col">Math</td>
+        <td class="col">32%</td>
+      </tr>
+      <tr class="row">
+        <td class="col">English</td>
+        <td class="col">23%</td>
+      </tr>
+      <tr class="row">
+        <td class="col">Hindi</td>
+        <td class="col">52%</td>
+      </tr>
+      <tr class="row">
+        <td class="col">Science</td>
+        <td class="col">75%</td>
+      </tr>
+    </table>
+
+    <script>
+      let element = document.getElementById("sub-heading");
+      let spanElement = element.getElementsByTagName("span");
+
+      let boldChildren = element.getElementsByClassName("bold");
+
+      let topHeading = document.getElementById("top-heading");
+
+      topHeading.style.color = "white";
+      topHeading.style.background = "salmon";
+      topHeading.style.fontSize = "50px"; // use camelCase instead of "-"
+
+      boldChildren[0].style.color = "salmon";
+    </script>
+
+    <script src="./script.js" type="text/javascript"></script>
+  </body>
+</html>
+
+<!-- check on your own the use of defer and async attributes in script tag -->
