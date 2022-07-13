@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 10px;
+}
+.box {
+  border: 1px solid grey;
+  margin-top: 50px;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+.btn {
+  border: none;
+  border-radius: 8px;
+  background-color: salmon;
+  padding: 8px 12px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.text {
+  margin-top: 10px;
+}
+
+.small {
+  font-size: 12px;
+}
+
+.large {
+  font-size: 20px;
+}
+
+form {
+  border: 1px solid grey;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  border-radius: 8px;
+  background-color: azure;
+}
+
+form input[type="submit"] {
+  padding: 4px;
+  cursor: pointer;
+  width: 60%;
+  margin: 0 auto;
+}
