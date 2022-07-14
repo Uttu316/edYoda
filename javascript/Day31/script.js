@@ -26,6 +26,9 @@
 
       span.append("╳");
       span.setAttribute("role", "button");
+      span.onclick = function (e) {
+        this.parentElement.remove();
+      };
 
       li.append(currentItem);
       li.append(span);
