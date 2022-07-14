@@ -104,20 +104,20 @@ const firstName = document.getElementById("fname");
 const lastname = document.getElementById("lname");
 const form = document.querySelector("form");
 
-// firstName.addEventListener("keydown", (e) => {
-//   switch (e.keyCode) {
-//     case 65:
-//       moveUp();
-//       break;
-//     case 45:
-//       jump();
-//       break;
-//   }
-// });
+firstName.addEventListener("keydown", (e) => {
+  switch (e.keyCode) {
+    case 65:
+      moveUp();
+      break;
+    case 45:
+      jump();
+      break;
+  }
+});
 
-// function jump() {}
+function jump() {}
 
-// function moveUp() {}
+function moveUp() {}
 
 let userDetails = {};
 
