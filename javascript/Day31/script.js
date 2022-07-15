@@ -6,23 +6,23 @@
   var list_array = [];
 
   input.addEventListener("change", (e) => {
-    currentItem = e.target.value;
+    currentItem = e.target.value.trim();
   });
 
   btn.addEventListener("click", onBtnClick);
 
   function onBtnClick(e) {
     e.preventDefault();
-    if (currentItem.trim() != "") {
+    if (currentItem != "") {
       input.value = "";
-      list_array.push(currentItem.trim());
+      list_array.push(currentItem);
 
       const li = document.createElement("li");
       const span = document.createElement("span");
 
       li.classList =
         "list-group-item d-flex justify-content-between align-items-center";
-      span.classList = "delete badge bg-secondary rounded-pill";
+      span.classList = "badge bg-secondary rounded-pill";
 
       span.append("╳");
       span.setAttribute("role", "button");
