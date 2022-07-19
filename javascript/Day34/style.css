@@ -1,0 +1,16 @@
+.error {
+  color: red;
+  margin: 4px 0px;
+}
+
+#user-cards {
+  background-color: aliceblue;
+  padding: 4px;
+}
+article {
+  box-shadow: 2px 2px 2px gray;
+  border-radius: 4px;
+  padding: 8px;
+  margin: 8px;
+  background-color: white;
+}
