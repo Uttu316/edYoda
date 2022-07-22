@@ -29,49 +29,41 @@ function hideLoader() {
 }
 
 function getTodoList() {
-  try {
-    const request = new XMLHttpRequest(); // browser inbuilt class, object, // readyState:0
+  const request = new XMLHttpRequest(); // browser inbuilt class, object, // readyState:0
 
-    request.open("GET", "https://jsonplaceholder.typicode.com/todos", true); // readyState:1
+  request.open("GET", `https://jsonplaceholder.typicode.com/todos`, true); // readyState:1
 
-    request.send(); // readyState:2
-    request.onreadystatechange = function () {
-      // console.log(this);
-      if (this.readyState === 3) {
-        // readyState:3 in progress
-        // show progress bar on screen
-        showLoader();
+  request.send(); // readyState:2
+  request.onreadystatechange = function () {
+    // console.log(this);
+    if (this.readyState === 3) {
+      // readyState:3 in progress
+      // show progress bar on screen
+      showLoader();
+    }
+    if (this.readyState === 4) {
+      // readyState:4 means done with response
+      // show response on the screen
+      hideLoader();
+      if (this.status >= 200 && this.status < 300) {
+        const response = this.responseText; // successfull response
+        const parsedResponse = JSON.parse(response);
+
+        createList();
+        parsedResponse.forEach((each_item) => {
+          createListItem(each_item);
+        });
+      } else if (this.status === 400) {
+        console.log("Bad Request");
+      } else if (this.status === 401) {
+        console.log("You are not authorised user");
+      } else if (this.status === 404) {
+        console.log("Wrong API");
+      } else {
+        console.log("Something went wrong, Try again later!");
       }
-      if (this.readyState === 4) {
-        // readyState:4 means done with response
-        // show response on the screen
-        hideLoader();
-        if (this.status >= 200 && this.status < 300) {
-          const response = this.responseText; // successfull response
-          const parsedResponse = JSON.parse(response);
-
-          createList();
-          parsedResponse.forEach((each_item) => {
-            createListItem(each_item);
-          });
-        } else if (this.status === 400) {
-          console.log("Bad Request");
-          throw "Bad Request";
-        } else if (this.status === 401) {
-          console.log("You are not authorised user");
-          throw "You are not authorised user";
-        } else if (this.status === 404) {
-          console.log("Wrong API");
-          throw "Wrong API";
-        } else {
-          console.log("Something went wrong, Try again later!");
-          throw "Something went wrong, Try again later!";
-        }
-      }
-    };
-  } catch (err) {
-    console.log(err);
-  }
+    }
+  };
 }
 
 function postListItem(requestObj) {
