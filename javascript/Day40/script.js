@@ -73,7 +73,7 @@ function onindexPage() {
     event.preventDefault();
     if (isValidate) {
       localStorage.setItem("isLoggedIn", true);
-      localStorage.setItem("username", JSON.stringify(credentials));
+      localStorage.setItem("username", credentials.username);
       location.pathname = location.pathname.replace("index", "quiz"); // redirect to quiz.html
 
       resetForm();
@@ -92,4 +92,6 @@ function onindexPage() {
   }
 }
 
-function onQuizPage() {}
+function onQuizPage() {
+  document.title = localStorage.getItem("username") + " - Quiz App";
+}
