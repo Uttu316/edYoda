@@ -11,7 +11,7 @@ abc();
 
 Memory // Heap -> Stores the variables
 
-Context
+Context: // Name Space
 
 Browser: // Web APIs 
  
