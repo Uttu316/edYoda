@@ -22,10 +22,6 @@ function onindexPage() {
   function onFormChange(event) {
     const { name, value } = event.target;
     isValidate = validateForm(name, value.trim());
-
-    if (isValidate) {
-      credentials = { ...credentials, [name]: value.trim() };
-    }
   }
 
   function validateForm(name, value) {
@@ -61,6 +57,13 @@ function onindexPage() {
         passError.innerHTML = "";
         passError.classList.replace("d-block", "d-none");
       }
+    }
+    credentials = { ...credentials, [name]: value.trim() };
+
+    if (!credentials.username || !credentials.password) {
+      isValid = false;
+    } else {
+      isValid = true;
     }
 
     return isValid;
