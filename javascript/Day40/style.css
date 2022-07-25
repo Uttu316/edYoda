@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 .header {
   padding: 10px 24px;
   display: flex;
@@ -32,7 +33,7 @@
 
 .login-wrapper {
   background-image: url("https://wallpaperaccess.com/full/327135.jpg");
-  height: 83vh;
+  height: calc(100vh - 98px);
   display: flex;
   justify-content: center;
   align-items: center;
