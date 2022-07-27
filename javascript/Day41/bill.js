@@ -57,14 +57,14 @@ function Bill() {
 
 const manali = new Bill();
 
-manali.addUser("Utkarsh", 1000);
-manali.addUser("Anil", 2000);
+const utkarshId = manali.addUser("Utkarsh", 1000);
+const anilId = manali.addUser("Anil", 2000);
 manali.addUser("Manohar", 10000);
 
-// manali.getCurrentBalance(1)
+// manali.getCurrentBalance(utkarshId)
 
 // manali.totalBalance()
 
-manali.deposit(2, 5000);
+manali.deposit(anilId, 5000);
 
 console.log(manali);
