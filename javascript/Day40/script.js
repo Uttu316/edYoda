@@ -94,4 +94,32 @@ function onindexPage() {
 
 function onQuizPage() {
   document.title = localStorage.getItem("username") + " - Quiz App";
+
+  // create the form
+
+  // Add a event listner (change) to form
+  // value, id,
+  /*
+  const correctAnswers = {
+    1:3,
+    2:1,
+    3:3,
+    4:3,
+    5:2
+  }
+
+  */
+  /*const givenAnswers = {
+    3:2,
+    1:4,
+    5:1,
+    2:3
+  }*/
+
+  /*
+  onSubmit()
+    // validate form
+        // check givenAnswers with correct answers
+            // update your totalMarks
+  */
 }

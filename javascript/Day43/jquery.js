@@ -49,4 +49,10 @@ $(document).ready(function () {
 
     btn.css({ background: "orange" });
   });
+
+  $(".btn").on({
+    blur: function (e) {},
+    click: function (e) {},
+    dblclick: function (e) {},
+  });
 });
