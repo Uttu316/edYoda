@@ -1,7 +1,6 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 html {
   height: 100%;
@@ -28,11 +27,11 @@ main {
 }
 .left-section {
   border-right: 1px solid rgba(0, 0, 0, 0.2);
-  padding: 10px;
   width: 60%;
   display: flex;
   align-items: center;
   flex-direction: column;
+  justify-content: center;
 }
 .right-section {
   width: 40%;
@@ -132,9 +131,20 @@ main {
   font-size: 14px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 660px) {
+  html,
+  main {
+    height: auto;
+  }
+  main {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 10px;
+  }
   .music-player {
     flex-direction: column;
+    width: 100%;
   }
   .left-section,
   .right-section {
@@ -142,11 +152,12 @@ main {
   }
   .left-section {
     border-right: none;
+    padding-bottom: 20px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   }
   .right-section {
-    padding-top: 20px;
+    padding-top: 10px;
     padding-left: 0px;
-    max-height: auto;
+    max-height: none;
   }
 }

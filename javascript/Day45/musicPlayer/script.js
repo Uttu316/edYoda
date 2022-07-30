@@ -74,26 +74,26 @@ function createListItem(trackDetails) {
 function createTemplate(trackDetails) {
   const { id, artist, albumCover, track } = trackDetails;
   return `
-<div class="list-item" data-id=${id}>
-<div class="list-item-image">
-  <img
-    src=${albumCover}
-    alt=${track}
-  />
-</div>
-<div class="list-item-details">
-  <p class="list-item-title">${track}</p>
-  <p class="list-item-singer">${artist}</p>
-</div>
-</div>
-`;
+        <div class="list-item" data-id=${id}>
+            <div class="list-item-image">
+                 <img
+                    src=${albumCover}
+                    alt=${track}
+                />
+            </div>
+            <div class="list-item-details">
+                <p class="list-item-title">${track}</p>
+                <p class="list-item-singer">${artist}</p>
+            </div>
+        </div>
+    `;
 }
 
 function plugTrack(trackDetails) {
   const { file, artist, albumCover, track } = trackDetails;
 
   const trackImage = $(".track-image img");
-  const audioSystem = $("#audio-system source");
+  const audioSystem = $("#audio-system"); // we just need to target #audio-system, we dont ned source. Try removing source from selector
   const title = $(".track-title");
   const singer = $(".track-singer");
   trackImage.attr("src", albumCover);
