@@ -2,7 +2,6 @@ var trackArray = [];
 $(function () {
   const audioSystem = $("#audio-system")[0];
 
-  const trackItem = $(".list-item");
   audioSystem.repeatCurretTrack = repeatCurretTrack;
   const playBtn = $("#play-btn");
   const pauseBtn = $("#pause-btn");
@@ -21,13 +20,7 @@ $(function () {
       playBtn.show();
     },
   });
-  trackItem.on({
-    click: function () {
-      const id = $(this).attr("data-id");
-      const track = trackArray.find((i) => i.id === id);
-      plugTrack(track);
-    },
-  });
+
   getTracks();
 });
 
@@ -43,8 +36,6 @@ const END_POINTS = {
 
 function getTracks() {
   $.get(`${BASE_URL}${END_POINTS.getPlaylist}`, function (data) {
-    console.log(data);
-
     if (data && data.length) {
       trackArray = data;
       createList(data);
@@ -68,7 +59,15 @@ function createList(trackList) {
 
 function createListItem(trackDetails) {
   const trackTemplate = createTemplate(trackDetails);
-  return $(trackTemplate);
+  const listItem = $(trackTemplate);
+  listItem.on({
+    click: function () {
+      const id = $(this).attr("data-id");
+      const track = trackArray.find((i) => i.id === id);
+      plugTrack(track);
+    },
+  });
+  return listItem;
 }
 
 function createTemplate(trackDetails) {
@@ -93,7 +92,7 @@ function plugTrack(trackDetails) {
   const { file, artist, albumCover, track } = trackDetails;
 
   const trackImage = $(".track-image img");
-  const audioSystem = $("#audio-system"); // we just need to target #audio-system, we dont ned source. Try removing source from selector
+  const audioSystem = $("#audio-system"); // we just need to target #audio-system, we dont need source. Try removing source from selector
   const title = $(".track-title");
   const singer = $(".track-singer");
   trackImage.attr("src", albumCover);
