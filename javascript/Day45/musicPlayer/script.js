@@ -92,7 +92,7 @@ function plugTrack(trackDetails) {
   const { file, artist, albumCover, track } = trackDetails;
 
   const trackImage = $(".track-image img");
-  const audioSystem = $("#audio-system"); // we just need to target #audio-system, we dont need source. Try removing source from selector
+  const audioSystem = $("#audio-system"); // we just need to target #audio-system, we dont need source. Try after removing source from selector
   const title = $(".track-title");
   const singer = $(".track-singer");
   trackImage.attr("src", albumCover);
