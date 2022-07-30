@@ -67,22 +67,29 @@ const userDetails = {
 
 function createNewUser(event) {
   console.log(userDetails);
-  // $.put(
-  //   "https://reqres.in/api/register",
-  //   userDetails,
-  //   function (data, status) {
-  //     console.log(data, status);
-  //     console.log("User created succesfully");
-  //   }
-  // ).fail((e) => {
-  //   console.log(e.responseJSON.error);
-  // });
+  $.post(
+    `${BASE_URL + END_POINTS.registerUSer}`,
+    userDetails,
+    function (data, status) {
+      console.log(data, status);
+      console.log("User created succesfully");
+    }
+  ).fail((e) => {
+    console.log(e.responseJSON.error);
+  });
+}
 
+// apiCall('GET',url)
+// apiCall('POST',url,data)
+// apiCall('PUT',url,data)
+// apiCall('DELETE',url,data)
+
+function apiCall(type, url, data) {
   $.ajax({
-    type: "POST",
-    url: `${BASE_URL + END_POINTS.registerUSer}`,
+    type: type,
+    url: url,
 
-    data: userDetails,
+    data: data,
     success: function (response) {
       console.log(response);
     },

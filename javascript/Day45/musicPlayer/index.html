@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Player</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link href="./style.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <main>
+      <article class="music-player">
+        <section class="left-section">
+          <div class="track-image">
+            <img src="" alt="track-image" />
+          </div>
+
+          <div class="track">
+            <audio controls id="audio-system">
+              <source type="audio/mp3" src="" />
+            </audio>
+          </div>
+
+          <div class="track-controls-wrapper">
+            <div class="track-controls">
+              <button id="play-btn" class="btn hover-effect" title="Play">
+                <i class="fa-solid fa-play"></i>
+              </button>
+              <button id="pause-btn" class="btn hover-effect" title="Pause">
+                <i class="fa-solid fa-pause"></i>
+              </button>
+            </div>
+          </div>
+          <div class="track-details">
+            <p class="track-title">Track Title</p>
+            <p class="track-singer">Singer</p>
+          </div>
+        </section>
+        <section class="right-section"></section>
+      </article>
+    </main>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

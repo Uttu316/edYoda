@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  background-image: linear-gradient(to right, #2ebf91, #8360c3);
+}
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.music-player {
+  background-color: rgba(255, 223, 238, 0.4);
+  box-shadow: 4px 4px 8px rgb(135 206 250 / 40%);
+  padding: 20px;
+  display: flex;
+  border-radius: 8px;
+  width: 70%;
+  max-width: 900px;
+}
+.left-section {
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.right-section {
+  width: 40%;
+}
+
+.track-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.track-image img {
+  height: 100%;
+  width: 100%;
+}
+
+.track {
+  margin: 20px 0px;
+}
+
+.btn {
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  height: 32px;
+  width: 32px;
+  background-color: transparent;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+#pause-btn {
+  display: none;
+}
+
+.hover-effect {
+  opacity: 0.6;
+}
+
+.hover-effect:hover {
+  opacity: 1;
+}
+
+.track-details {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.track-title {
+  font-weight: 600;
+  font-size: 24px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.track-singer {
+  margin-top: 20px;
+}
+
+.right-section {
+  padding-left: 20px;
+  max-height: 80vh;
+  overflow: auto;
+}
+
+.list-item {
+  display: flex;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+
+.list-item-image {
+  height: 60px;
+  width: 60px;
+  overflow: hidden;
+  border-radius: 4px;
+}
+.list-item-image img {
+  height: 100%;
+  width: 100%;
+}
+
+.list-item-details {
+  margin-left: 20px;
+  padding-top: 4px;
+}
+
+.list-item-title {
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 8px;
+}
+.list-item-singer {
+  font-size: 14px;
+}
+
+@media screen and (max-width: 600px) {
+  .music-player {
+    flex-direction: column;
+  }
+  .left-section,
+  .right-section {
+    width: 100%;
+  }
+  .left-section {
+    border-right: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  .right-section {
+    padding-top: 20px;
+    padding-left: 0px;
+    max-height: auto;
+  }
+}
