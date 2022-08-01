@@ -50,8 +50,8 @@ function getTracks() {
 
 function createList(trackList) {
   const container = $(".right-section");
-  trackList.forEach((item) => {
-    const listItem = createListItem(item);
+  trackList.forEach((item, index) => {
+    const listItem = createListItem(item, index);
 
     container.append(listItem);
   });
@@ -70,7 +70,7 @@ function createListItem(trackDetails) {
   return listItem;
 }
 
-function createTemplate(trackDetails) {
+function createTemplate(trackDetails, index) {
   const { id, artist, albumCover, track } = trackDetails;
   return `
         <div class="list-item" data-id=${id}>

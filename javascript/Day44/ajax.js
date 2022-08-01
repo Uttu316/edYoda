@@ -21,7 +21,7 @@ function getUsers() {
   });
 }
 
-function createCardTemplate(userDetails) {
+function createCardTemplate(userDetails, index) {
   const { avatar, email, first_name, id, last_name } = userDetails;
 
   return `
@@ -51,8 +51,8 @@ function creaList(data, status) {
   if (status === "success" && data.data) {
     const userList = data.data;
     const container = $("#user-list");
-    userList.forEach((item) => {
-      const card = createUserCard(item);
+    userList.forEach((item, index) => {
+      const card = createUserCard(item, index);
 
       container.append(card);
     });
