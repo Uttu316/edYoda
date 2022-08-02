@@ -1,0 +1,16 @@
+ls  get all the folder and filnames inside a folder
+cd  change directory(folder), For example- cd foldername
+cd.. to go back to parent folder.
+mkdir to create a folder inside current folder, For example: mkdir foldername
+rmdir to delete a specific folder, For example: rmdir foldername
+touch to create a new file, For Example: touch filename.extension
+pwd   to  get the path of current folder
+
+
+git --version to get the lateset version in your system
+git clone  to clone repository from remote git to local folder
+git status  to check current status of local git folder
+git add (filename.ext/*)  to stage all or specific file on local git
+git commit -m "your message"  to commit your changes locally
+git push to push your local commits on remote branch
+git pull to take pull/remote changes into your local repository
