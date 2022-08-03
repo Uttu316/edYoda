@@ -1,3 +1,4 @@
+driveName: to change the drive, For Example: D:, d:, e:, E:
 ls  get all the folder and filnames inside a folder
 cd  change directory(folder), For example- cd foldername
 cd.. to go back to parent folder.
