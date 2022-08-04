@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day49</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" type="text/css" />
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to Tinder</h1>
+
+      <div class="right-menu">
+        <button id="add-user-btn">
+          Add User <i class="fa-solid fa-user-plus"></i>
+        </button>
+        <a href="/matches">Matches</a>
+        <div class="matches-counter">
+          <span class="heart-icon color-pink"
+            ><i class="fa-solid fa-heart"></i
+          ></span>
+          <span class="count">0</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="banner">
+      <img
+        src="http://wpuploads.appadvice.com/wp-content/uploads/2015/11/Tinder-banner.jpg"
+      />
+      <img
+        src="https://www.thedubs.com/wp-content/uploads/2018/10/are_tinder_and_bumble_the_answer_to_millennial_marketing_banner.jpg"
+      />
+      <img src="https://images.indianexpress.com/2021/06/Tinder.jpg" />
+      <img
+        src="https://modsapkdl.com/wp-content/uploads/2022/06/Tinder-Banner.jpg"
+      />
+    </section>
+
+    <section id="user-list" class="container"></section>
+    <div class="btn-container">
+      <button id="load-more-btn">Load more</button>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="./ajax.js"></script>
+  </body>
+</html>
