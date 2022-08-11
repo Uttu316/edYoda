@@ -1,0 +1,84 @@
+{
+    "head": {
+        "data": 0,
+        "next": {
+            "data": 1,
+            "next": {
+                "data": 2,
+                "next": {
+                    "data": 3,
+                    "next": {
+                        "data": 4,
+                        "next": null
+                    }
+                }
+            }
+        }
+    }
+}
+
+{
+    "head": {
+        "data": 0,
+        "next": {
+            "data": 1,
+            "next": {
+                "data": 2,
+                "next": {
+                    "data": 3,
+                    "next": {
+                        "data": 4,
+                        "next": null
+                    }
+                }
+            }
+        }
+    }
+}
+
+{
+    "head": {
+        "data": -1,
+        "next": {
+            "data": 0,
+            "next": {
+                "data": "Utkarsh",
+                "next": {
+                    "data": 1,
+                    "next": {
+                        "data": 2,
+                        "next": {
+                            "data": 3,
+                            "next": {
+                                "data": 4,
+                                "next": null
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+{
+    "head": {
+        "data": -1,
+        "next": {
+            "data": 0,
+            "next": {
+                "data": "Utkarsh",
+                "next": {
+                    "data": 1,
+                    "next": {
+                        "data": 2,
+                        "next": {
+                            "data": 3,
+                            "next": null
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
