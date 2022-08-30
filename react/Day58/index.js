@@ -88,3 +88,7 @@ const name = "Utkarsh";
 let { age, name: Fname, salary } = obj;
 
 console.log(name);
+
+const fullName = "Utkarsh";
+
+const str = `Hello ${fullName}`;
