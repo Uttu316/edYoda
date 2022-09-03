@@ -1,0 +1,17 @@
+.counter-container {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  padding: 20px;
+  background-color: salmon;
+  color: white;
+  font-size: 16px;
+  border-radius: 4px;
+  border: none;
+  margin: 0px 20px;
+  cursor: pointer;
+}
