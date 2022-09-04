@@ -1,6 +1,8 @@
 .section {
-  display: flex;
   margin: 50px 20px;
+}
+.usersInfo {
+  display: flex;
 }
 .list {
   padding: 12px;
@@ -25,4 +27,7 @@
 .selectedItem {
   background-color: salmon;
   color: white;
+}
+
+#id {
 }
