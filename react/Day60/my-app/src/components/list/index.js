@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import SearchBar from "../searchbars";
 import style from "./list.module.css";
 import Listitem from "./listItem";
+import { data as userList } from "../../constants";
 
 const List = () => {
   const [selectedUser, setUser] = useState(null);
@@ -53,38 +54,5 @@ const List = () => {
     </section>
   );
 };
-
-const userList = [
-  {
-    name: "Utkarsh",
-    age: 24,
-    address: "Agra, UP",
-    image: "https://randomuser.me/api/portraits/men/19.jpg",
-  },
-  {
-    name: "Rushikesh",
-    age: 23,
-    address: "Mumbai, MH",
-    image: "https://randomuser.me/api/portraits/men/20.jpg",
-  },
-  {
-    name: "Satyam",
-    age: 25,
-    address: "Indore, MP",
-    image: "https://randomuser.me/api/portraits/men/21.jpg",
-  },
-  {
-    name: "Vijay",
-    age: 18,
-    address: "Gwalior, MP",
-    image: "https://randomuser.me/api/portraits/men/22.jpg",
-  },
-  {
-    name: "Sudheer",
-    age: 26,
-    address: "Rishikesh, UK",
-    image: "https://randomuser.me/api/portraits/men/23.jpg",
-  },
-];
 
 export default List;
