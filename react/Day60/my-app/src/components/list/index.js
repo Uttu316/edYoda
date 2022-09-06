@@ -19,7 +19,7 @@ const List = () => {
       setData(userList);
     } else {
       const newArray = userList.filter((i) =>
-        i.name.toLowerCase().includes(searchValue.toLowerCase())
+        i.firstName.toLowerCase().includes(searchValue.toLowerCase())
       );
       setData(newArray);
     }
@@ -33,7 +33,7 @@ const List = () => {
         <ul className={style.list}>
           {data.map((user, index) => (
             <Listitem
-              key={user.name + index}
+              key={user.id + index}
               user={user}
               onSelectUser={onSelectUser}
               selectedUser={selectedUser}
@@ -42,10 +42,10 @@ const List = () => {
         </ul>
         {selectedUser != null ? (
           <div>
-            <img alt={selectedUser.name} src={selectedUser.image} />
-            <p>{selectedUser.name}</p>
-            <p>{selectedUser.age}</p>
-            <p>{selectedUser.address}</p>
+            <img alt={selectedUser.firstName} src={selectedUser.image} />
+            <p>{selectedUser.firstName}</p>
+            <p>{selectedUser.email}</p>
+            <p>{selectedUser.phone}</p>
           </div>
         ) : (
           <h2>Select a user</h2>

@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, Component } from "react";
 import "./counter.css";
 
-const Counter = () => {
+const Counter = (props) => {
   const [value, setValue] = useState(0);
 
   const onAdd = () => {
@@ -10,15 +10,21 @@ const Counter = () => {
   const onSubstract = () => {
     setValue(value - 1);
   };
+
+  const Button = (btnprops) => {
+    const { onClick, label } = btnprops;
+    return (
+      <button className="btn" onClick={onClick}>
+        {label}
+      </button>
+    );
+  };
   return (
     <div className="counter-container">
-      <button className="btn" onClick={onAdd}>
-        Add
-      </button>
+      <Button label={"Add"} onClick={onAdd} />
       <h1 className="value">{value}</h1>
-      <button className="btn" onClick={onSubstract}>
-        Subtract
-      </button>
+
+      <Button label={"Subtract"} onClick={onSubstract} />
     </div>
   );
 };

@@ -8,13 +8,14 @@ const Listitem = (props) => {
       className={`${style.listItem}
           ${
             selectedUser != null &&
-            selectedUser.name === user.name &&
+            selectedUser.id === user.id &&
             style.selectedItem
           }`}
       onClick={() => onSelectUser(user)}
     >
-      <span>{user.name}</span>
-      <span>{user.age}</span>
+      <span>
+        {user.firstName} {user.lastName}
+      </span>
     </li>
   );
 };
