@@ -1,7 +1,8 @@
-import React, { Component } from "react";
+import React, { Component, PureComponent } from "react";
+
 import "./counter.css";
 
-class LifeCycleCounter extends Component {
+class PureCounter extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -9,13 +10,6 @@ class LifeCycleCounter extends Component {
     };
 
     this.onAdd = this.onAdd.bind(this);
-  }
-
-  shouldComponentUpdate(nextProps, nextState) {
-    if (nextState.value !== this.state.value) {
-      return true;
-    }
-    return false;
   }
 
   onAdd() {
@@ -27,14 +21,16 @@ class LifeCycleCounter extends Component {
   };
 
   render() {
-    console.log("I am inside ");
+    console.log("I am inside");
     return (
       <div className="counter-container">
         <button className="btn" onClick={this.onAdd}>
           Add
         </button>
 
-        <h1 className="value">{this.state.value}</h1>
+        <h1 className="value">
+          {this.props.user.name} {this.state.value}
+        </h1>
         <button className="btn" onClick={() => this.onSubstract()}>
           Subtract
         </button>
@@ -43,4 +39,4 @@ class LifeCycleCounter extends Component {
   }
 }
 
-export default LifeCycleCounter;
+export default PureCounter;
