@@ -4,7 +4,7 @@ import Header from "./components/header";
 import List from "./components/header/list";
 import { popular, shows, trendings } from "./constant";
 
-function App() {
+function App(props) {
   return (
     <div class="wrapper">
       <Header />
