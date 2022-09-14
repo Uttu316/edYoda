@@ -6,17 +6,19 @@ import ImagesList from "./componets/images";
 import ResponsiveDrawer from "./componets/drawer";
 import { getUserInfo } from "./services";
 import { Snackbar } from "@mui/material";
+import Counter from "./componets/counter";
+import { Button } from "@mui/material";
 
 import ListCard from "./componets/list/card";
 
 function App() {
   const [showError, setShowError] = useState("");
-  const [userData, setUserData] = useState([]);
+  const [userData, setUserData] = useState(null);
+  const [showCounter, toggleCounter] = useState(true);
 
   useEffect(() => {
     getUserDetails();
   }, []);
-
   const getUserDetails = () => {
     getUserInfo()
       .then((data) => {
@@ -34,6 +36,17 @@ function App() {
       <ListCard data={userData} />
       {/* <ImagesList /> */}
       {/* <ResponsiveDrawer /> */}
+
+      {/* {showCounter && <Counter />} */}
+
+      {/* <Button
+        variant="contained"
+        sx={{ marginTop: 4 }}
+        onClick={() => toggleCounter(!showCounter)}
+      >
+        {showCounter ? "Hide Counter" : "Show Counter"}
+      </Button> */}
+
       {Boolean(showError) && (
         <Snackbar
           open={Boolean(showError)}
