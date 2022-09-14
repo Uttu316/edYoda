@@ -2,14 +2,12 @@ import Grid from "@mui/material/Grid";
 import React from "react";
 import Card from "./card";
 
-const List = () => {
+const List = ({ users = [] }) => {
   return (
     <Grid container m={4}>
-      <Card />
-
-      <Card />
-
-      <Card />
+      {users.map((user, index) => (
+        <Card data={user} />
+      ))}
     </Grid>
   );
 };
