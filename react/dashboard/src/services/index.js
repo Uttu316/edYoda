@@ -1,10 +1,15 @@
 import axios from "axios";
+import { BASE_URL, END_POINTS } from "./constants";
 
-const url = "https://random-data-api.com/api/users/random_user";
+const instance = axios.create({
+  baseURL: BASE_URL,
+});
 
-export const getUserInfo = async () => {
+// axios.defaults.baseURL = BASE_URL
+
+export const getUsers = async () => {
   try {
-    const res = await axios.get(url);
+    const res = await instance.get(END_POINTS.getUsers);
     return res.data;
   } catch (e) {
     console.log(e);

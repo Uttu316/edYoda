@@ -5,6 +5,9 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import { IconButton } from "@mui/material";
+import BlockIcon from "@mui/icons-material/Block";
 
 export default function ListCard({ data }) {
   return (
@@ -17,15 +20,19 @@ export default function ListCard({ data }) {
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          {data?.username}
+          {data?.first_name + " " + data?.last_name}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          {data?.address?.street_address}
+          {data?.email}
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Delete</Button>
-        <Button size="small">Learn More</Button>
+        <IconButton>
+          <FavoriteIcon />
+        </IconButton>
+        <IconButton>
+          <BlockIcon />
+        </IconButton>
       </CardActions>
     </Card>
   );
