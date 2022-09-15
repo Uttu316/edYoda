@@ -1,5 +1,5 @@
 import Grid from "@mui/material/Grid";
-import { Container, Button } from "@mui/material";
+import { Container } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { getUsers } from "../../services";
 import CardsLoader from "../loaders/cardsLoader";
