@@ -6,16 +6,21 @@ const CardsLoader = () => {
   return (
     <React.Fragment>
       {numberOfCards.map((i, index) => (
-        <Skeleton
-          variant="rectangular"
-          key={index + "card_skeleton"}
-          sx={{ margin: 4 }}
-          width={210}
-          height={118}
-        />
+        <CardLoader key={index + "card_loader"} />
       ))}
     </React.Fragment>
   );
 };
 
+export const CardLoader = ({ ...props }) => {
+  return (
+    <Skeleton
+      variant="rectangular"
+      sx={{ margin: 4 }}
+      width={210}
+      height={118}
+      {...props}
+    />
+  );
+};
 export default CardsLoader;

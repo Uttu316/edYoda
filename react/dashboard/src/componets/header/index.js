@@ -14,7 +14,7 @@ import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import FlutterDashIcon from "@mui/icons-material/FlutterDash";
 
-const pages = [];
+const pages = ["Likes"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const Header = () => {
