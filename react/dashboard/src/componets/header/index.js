@@ -13,11 +13,12 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import FlutterDashIcon from "@mui/icons-material/FlutterDash";
+import { Badge } from "@mui/material";
+import { Link } from "react-router-dom";
 
-const pages = ["Likes"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
-const Header = () => {
+const Header = ({ numberOfLikes }) => {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
 
@@ -90,11 +91,11 @@ const Header = () => {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+              <Badge badgeContent={numberOfLikes} color="secondary">
+                <MenuItem onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center">Likes</Typography>
                 </MenuItem>
-              ))}
+              </Badge>
             </Menu>
           </Box>
           <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
@@ -117,15 +118,16 @@ const Header = () => {
             LOGO
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                {page}
-              </Button>
-            ))}
+            <Link to={"/likes"}>
+              <Badge badgeContent={numberOfLikes} color="secondary">
+                <Button
+                  onClick={handleCloseNavMenu}
+                  sx={{ color: "white", display: "block" }}
+                >
+                  Likes
+                </Button>
+              </Badge>
+            </Link>
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>

@@ -6,7 +6,7 @@ import { Box, Alert } from "@mui/material";
 import { CardLoader } from "./loaders/cardsLoader";
 import ListCard from "./list/card";
 
-const UserDetails = () => {
+const UserDetails = ({ ...props }) => {
   const [userData, setUserData] = useState(null);
   const [isLoading, setIsloading] = useState(false);
   const [error, setError] = useState("");
@@ -33,14 +33,12 @@ const UserDetails = () => {
         setIsloading(false);
       });
   };
-  console.log(userData);
   return (
     <Box m={4}>
       {isLoading && <CardLoader width={240} height={320} />}
-
       {error !== "" && <Alert severity="error">{error}</Alert>}
       {!isLoading && !userData && !error && "No data is available"}
-      {!isLoading && userData && <ListCard data={userData} />}
+      {!isLoading && userData && <ListCard data={userData} {...props} />}
     </Box>
   );
 };

@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import Header from "../componets/header";
 import List from "../componets/list";
 
-const Home = () => {
+const LikesPage = () => {
   const [likeCounter, setLikeCounter] = useState(0);
+
   useEffect(() => {
     const likesArray = JSON.parse(localStorage.getItem("likes")) || [];
     setLikeCounter(likesArray.length);
@@ -15,4 +16,5 @@ const Home = () => {
     </div>
   );
 };
-export default Home;
+
+export default LikesPage;
