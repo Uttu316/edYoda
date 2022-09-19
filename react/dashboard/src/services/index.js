@@ -13,7 +13,7 @@ export const getUsers = async () => {
     return res.data;
   } catch (e) {
     console.log(e);
-    return "Error has occured";
+    throw new Error("Error has occured");
   }
 };
 
@@ -33,4 +33,14 @@ export const fetchUserDetails = (userId) => {
         reject(err);
       });
   });
+};
+
+export const createUser = async (data) => {
+  try {
+    const res = await AXIOS.post(END_POINTS.registerUSer, data);
+    return res.data;
+  } catch (e) {
+    console.log(e);
+    throw new Error("Error has occured");
+  }
 };

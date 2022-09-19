@@ -4,3 +4,10 @@ export const getUserId = () => {
   const userId = Number(searchObj.get("profile_id"));
   return userId;
 };
+
+export const validatePassword = (value) => {
+  if (value.length < 8) {
+    return "Password is too short";
+  }
+  return "";
+};

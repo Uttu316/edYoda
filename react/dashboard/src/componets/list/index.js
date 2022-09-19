@@ -11,10 +11,12 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
+import { Alert, AlertTitle } from "@mui/material";
 
 const List = (props) => {
+  const { setLikeCounter } = props;
   const [selectedUsers, setSelectedUsers] = useState({});
-  const [users, setUsers] = useState(null); //
+  const [users, setUsers] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [showDelete, setShowDelete] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
@@ -51,15 +53,21 @@ const List = (props) => {
   const onDeleteBtn = () => {
     setShowAlert(true);
   };
+
   const handleClose = () => {
     setShowAlert(false);
   };
+
   const onDeleteItems = () => {
-    const likesArray = JSON.parse(localStorage.getItem("like")) || [];
+    const likesArray = JSON.parse(localStorage.getItem("likes")) || [];
     const keys = Object.keys(selectedUsers);
     let newArray = likesArray.filter((i) => !keys.includes(i.id.toString()));
-    console.log(newArray, keys);
     localStorage.setItem("likes", JSON.stringify(newArray));
+    setUsers({
+      data: newArray,
+    });
+    setLikeCounter(newArray.length);
+    setSelectedUsers({});
     setShowAlert(false);
   };
   return (
@@ -89,6 +97,14 @@ const List = (props) => {
           Delete
         </Button>
       )}
+      {!isLoading &&
+        ((users && users.data && users.data.length === 0) ||
+          users === null) && (
+          <Alert severity="info">
+            <AlertTitle>Hi There,</AlertTitle>
+            You have not liked any one yet. Click ❤️ to like someone.
+          </Alert>
+        )}
       <Dialog
         open={showAlert}
         onClose={handleClose}

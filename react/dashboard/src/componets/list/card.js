@@ -9,7 +9,7 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import { IconButton } from "@mui/material";
 import BlockIcon from "@mui/icons-material/Block";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const checkUserIsLikeAlready = (id) => {
   // console.log("Hello", id);
@@ -20,10 +20,11 @@ const checkUserIsLikeAlready = (id) => {
 
 export default function ListCard({
   data,
-  selectedUsers,
+  selectedUsers = {},
   setLikeCounter,
   setSelectedUsers,
 }) {
+  const location = useLocation();
   const userIsLiked = useMemo(() => {
     return checkUserIsLikeAlready(data?.id);
   }, [data?.id]);
@@ -83,9 +84,11 @@ export default function ListCard({
         <IconButton onClick={onLikeProfile}>
           <FavoriteIcon color={isLike ? "error" : "disabled"} />
         </IconButton>
-        <IconButton onClick={onMultiSelect}>
-          {selectedUsers[data?.id] ? <CheckCircleIcon /> : <BlockIcon />}
-        </IconButton>
+        {location.pathname === "/likes" && (
+          <IconButton onClick={onMultiSelect}>
+            {selectedUsers[data?.id] ? <CheckCircleIcon /> : <BlockIcon />}
+          </IconButton>
+        )}
       </CardActions>
     </Card>
   );
