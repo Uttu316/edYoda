@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Avatar from "@mui/material/Avatar";
-import { Button, CircularProgress } from "@mui/material";
+import { Button, Snackbar, CircularProgress } from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
@@ -9,7 +9,7 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { validatePassword } from "../utils/utils";
 import { createUser } from "../services";
-import { useNavigate } from "react-router-dom";
+import { redirect } from "react-router-dom";
 
 export default function Login({ setIsLoggedIn }) {
   const [formDetails, setFormDetails] = useState({
@@ -22,8 +22,8 @@ export default function Login({ setIsLoggedIn }) {
     password: "",
     confirm_password: "",
   });
+  const [showSnack, setShowSnack] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const navigate = useNavigate();
 
   const handleOnChange = (event) => {
     const { value, name } = event.target;
@@ -45,6 +45,8 @@ export default function Login({ setIsLoggedIn }) {
   const onSubmit = (event) => {
     event.preventDefault();
 
+    // validation check
+
     setIsLoading(true);
     const data = {
       email: formDetails.email,
@@ -54,15 +56,17 @@ export default function Login({ setIsLoggedIn }) {
     createUser(data)
       .then((res) => {
         // store token in redux/higher component state
-        setIsLoggedIn(true);
-        navigate("/");
+        setIsLoggedIn?.(true);
+        redirect("/");
       })
       .catch((err) => {
+        console.log(err);
         setFormDetails({
           ...formDetails,
           password: "",
           confirm_password: "",
         });
+        setShowSnack("Something went wrong!");
       })
       .finally(() => {
         setIsLoading(false);
@@ -139,6 +143,14 @@ export default function Login({ setIsLoggedIn }) {
           </Button>
         </Box>
       </Box>
+      <Snackbar
+        open={Boolean(showSnack)}
+        autoHideDuration={3000}
+        onClose={() => {
+          setShowSnack(false);
+        }}
+        message={showSnack}
+      />
     </Container>
   );
 }
