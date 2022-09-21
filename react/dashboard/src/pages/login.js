@@ -9,7 +9,7 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { validatePassword } from "../utils/utils";
 import { createUser } from "../services";
-import { redirect } from "react-router-dom";
+import { redirect, useNavigate } from "react-router-dom";
 
 export default function Login({ setIsLoggedIn }) {
   const [formDetails, setFormDetails] = useState({
@@ -24,6 +24,7 @@ export default function Login({ setIsLoggedIn }) {
   });
   const [showSnack, setShowSnack] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleOnChange = (event) => {
     const { value, name } = event.target;
@@ -57,7 +58,7 @@ export default function Login({ setIsLoggedIn }) {
       .then((res) => {
         // store token in redux/higher component state
         setIsLoggedIn?.(true);
-        redirect("/");
+        navigate("/");
       })
       .catch((err) => {
         console.log(err);

@@ -6,7 +6,7 @@ export const getUserId = () => {
 };
 
 export const validatePassword = (value) => {
-  if (value.length < 8) {
+  if (value.length < 6) {
     return "Password is too short";
   }
   return "";
