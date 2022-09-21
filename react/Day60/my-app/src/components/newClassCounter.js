@@ -13,8 +13,6 @@ class NewClassCounter extends Component {
   componentDidUpdate(prevProps) {
     if (this.props.value > 4) {
       this.props.onChangeColor("blue");
-    } else {
-      this.props.onChangeColor("salmon");
     }
   }
 
