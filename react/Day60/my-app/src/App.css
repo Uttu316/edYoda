@@ -7,6 +7,16 @@
   border-radius: 4px;
 }
 
+.btn {
+  padding: 8px;
+  background-color: salmon;
+  color: white;
+  font-size: 20px;
+}
+.counter-wrapper {
+  margin: 30px;
+}
+
 .footer {
   background-color: darkslategrey;
   color: white;
