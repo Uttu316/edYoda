@@ -25,22 +25,23 @@ class NewClassCounter extends Component {
     this.props.onMinus(newValue);
   };
   render() {
+    const { value, color } = this.props;
     return (
       <div className="counter-wrapper">
         <button
           className="btn"
           style={{
-            background: this.props.color,
+            background: color,
           }}
           onClick={this.onAddition}
         >
           Add+
         </button>
-        {this.props.value}
+        {value}
         <button
           className="btn"
           style={{
-            background: this.props.color,
+            background: color,
           }}
           onClick={this.onSubstraction}
         >
@@ -53,8 +54,8 @@ class NewClassCounter extends Component {
 
 const mapStateToProps = (states) => {
   return {
-    value: states.value,
-    color: states.color,
+    value: states.counter.value,
+    color: states.counter.color,
   };
 };
 

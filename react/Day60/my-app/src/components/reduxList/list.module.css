@@ -1,0 +1,33 @@
+.section {
+  margin: 50px 20px;
+}
+.usersInfo {
+  display: flex;
+}
+.list {
+  padding: 12px;
+  border-radius: 4px;
+  background-color: white;
+  box-shadow: 0px 10px 4px #ccc;
+  list-style: none;
+  width: 50%;
+  margin: 20px;
+}
+.listItem {
+  padding: 10px 0px;
+  border-bottom: 1px solid lightgray;
+  cursor: pointer;
+}
+
+.listItem span {
+  font-size: 16px;
+  margin-right: 4px;
+}
+
+.selectedItem {
+  background-color: salmon;
+  color: white;
+}
+
+#id {
+}

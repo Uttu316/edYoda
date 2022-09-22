@@ -3,3 +3,7 @@ export const COUNTER_ACTIONS_TYPES = {
   DECREMENT: "DECREMENT",
   CHANGE_COLOR: "CHANGE_COLOR",
 };
+
+export const LIST_ACTIONS_TYPES = {
+  SET_LIST: "SET_LIST",
+};

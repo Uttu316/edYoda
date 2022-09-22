@@ -9,7 +9,9 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { validatePassword } from "../utils/utils";
 import { createUser } from "../services";
-import { redirect, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setToken } from "../redux/actions/profileActions";
 
 export default function Login({ setIsLoggedIn }) {
   const [formDetails, setFormDetails] = useState({
@@ -17,6 +19,7 @@ export default function Login({ setIsLoggedIn }) {
     password: "",
     confirm_password: "",
   });
+
   const [errors, setErrors] = useState({
     email: "",
     password: "",
@@ -25,6 +28,8 @@ export default function Login({ setIsLoggedIn }) {
   const [showSnack, setShowSnack] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+
+  const dipatch = useDispatch();
 
   const handleOnChange = (event) => {
     const { value, name } = event.target;
@@ -56,7 +61,8 @@ export default function Login({ setIsLoggedIn }) {
 
     createUser(data)
       .then((res) => {
-        // store token in redux/higher component state
+        dipatch(setToken(res.token));
+
         setIsLoggedIn?.(true);
         navigate("/");
       })

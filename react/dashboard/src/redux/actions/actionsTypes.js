@@ -1,0 +1,3 @@
+export const PROFILE_ACTIONS_TYPES = {
+  SET_TOKEN: "SET_TOKEN",
+};
