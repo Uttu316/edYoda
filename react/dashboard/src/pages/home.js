@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from "react";
 import Header from "../componets/header";
 import List from "../componets/list";
-import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { setLikeCount } from "../redux/actions/profileActions";
 
-const Home = () => {
-  const [likeCounter, setLikeCounter] = useState(0);
-
-  const { token } = useSelector((state) => state.profile);
+const Home = (props) => {
+  const dipatch = useDispatch();
 
   useEffect(() => {
     const likesArray = JSON.parse(localStorage.getItem("likes")) || [];
-    setLikeCounter(likesArray.length);
+    dipatch(setLikeCount(likesArray.length));
   }, []);
+
   return (
     <div>
-      <Header numberOfLikes={likeCounter} />
-      <List setLikeCounter={setLikeCounter} />
+      <Header />
+      <List />
     </div>
   );
 };

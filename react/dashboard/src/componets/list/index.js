@@ -12,10 +12,12 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import { Alert, AlertTitle } from "@mui/material";
+import { useDispatch } from "react-redux";
+import { setLikeCount } from "../../redux/actions/profileActions";
 
 const List = (props) => {
-  const { setLikeCounter } = props;
   const [selectedUsers, setSelectedUsers] = useState({});
+  const dipatch = useDispatch();
   const [users, setUsers] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [showDelete, setShowDelete] = useState(false);
@@ -66,7 +68,7 @@ const List = (props) => {
     setUsers({
       data: newArray,
     });
-    setLikeCounter(newArray.length);
+    dipatch(setLikeCount(newArray.length));
     setSelectedUsers({});
     setShowAlert(false);
   };

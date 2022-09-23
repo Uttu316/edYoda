@@ -15,12 +15,17 @@ import AdbIcon from "@mui/icons-material/Adb";
 import FlutterDashIcon from "@mui/icons-material/FlutterDash";
 import { Badge } from "@mui/material";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { setToken } from "../../redux/actions/profileActions";
+import { useNavigate } from "react-router-dom";
 
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
-
-const Header = ({ numberOfLikes }) => {
+const Header = ({}) => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
+
+  const { likeCount } = useSelector((state) => state.profile);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -32,11 +37,15 @@ const Header = ({ numberOfLikes }) => {
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
-
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
-
+  const onLogout = () => {
+    dispatch(setToken(null));
+    localStorage.removeItem("token");
+    setAnchorElUser(null);
+    navigate("/login");
+  };
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
@@ -91,7 +100,7 @@ const Header = ({ numberOfLikes }) => {
                 display: { xs: "block", md: "none" },
               }}
             >
-              <Badge badgeContent={numberOfLikes} color="secondary">
+              <Badge badgeContent={likeCount} color="secondary">
                 <MenuItem onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">Likes</Typography>
                 </MenuItem>
@@ -119,7 +128,7 @@ const Header = ({ numberOfLikes }) => {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             <Link to={"/likes"}>
-              <Badge badgeContent={numberOfLikes} color="secondary">
+              <Badge badgeContent={likeCount} color="secondary">
                 <Button
                   onClick={handleCloseNavMenu}
                   sx={{ color: "white", display: "block" }}
@@ -152,11 +161,9 @@ const Header = ({ numberOfLikes }) => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
+              <MenuItem onClick={onLogout}>
+                <Typography textAlign="center">Logout</Typography>
+              </MenuItem>
             </Menu>
           </Box>
         </Toolbar>

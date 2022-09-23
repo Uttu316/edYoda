@@ -6,3 +6,10 @@ export const setToken = (token) => {
     payload: token,
   };
 };
+
+export const setLikeCount = (count) => {
+  return {
+    type: PROFILE_ACTIONS_TYPES.SET_LIKE_COUNT,
+    payload: count,
+  };
+};

@@ -13,7 +13,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setToken } from "../redux/actions/profileActions";
 
-export default function Login({ setIsLoggedIn }) {
+export default function Login({}) {
   const [formDetails, setFormDetails] = useState({
     email: "",
     password: "",
@@ -62,8 +62,7 @@ export default function Login({ setIsLoggedIn }) {
     createUser(data)
       .then((res) => {
         dipatch(setToken(res.token));
-
-        setIsLoggedIn?.(true);
+        localStorage.setItem("token", res.token);
         navigate("/");
       })
       .catch((err) => {

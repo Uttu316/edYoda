@@ -10,6 +10,8 @@ import { IconButton } from "@mui/material";
 import BlockIcon from "@mui/icons-material/Block";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { Link, useLocation } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { setLikeCount } from "../../redux/actions/profileActions";
 
 const checkUserIsLikeAlready = (id) => {
   // console.log("Hello", id);
@@ -21,10 +23,13 @@ const checkUserIsLikeAlready = (id) => {
 export default function ListCard({
   data,
   selectedUsers = {},
-  setLikeCounter,
   setSelectedUsers,
 }) {
   const location = useLocation();
+
+  const dispatch = useDispatch();
+  const { likeCount } = useSelector((state) => state.profile);
+
   const userIsLiked = useMemo(() => {
     return checkUserIsLikeAlready(data?.id);
   }, [data?.id]);
@@ -39,17 +44,17 @@ export default function ListCard({
       const obj = { ...data };
       likesArray.push(obj);
       localStorage.setItem("likes", JSON.stringify(likesArray));
-      setLikeCounter((value) => value + 1);
+
+      dispatch(setLikeCount(likeCount + 1));
     } else {
       let newArray = likesArray.filter((i) => i.id !== data.id);
       localStorage.setItem("likes", JSON.stringify(newArray));
-      setLikeCounter((value) => {
-        if (value >= 0) {
-          return value - 1;
-        } else {
-          return 0;
-        }
-      });
+
+      if (likeCount >= 0) {
+        dispatch(setLikeCount(likeCount - 1));
+      } else {
+        dispatch(setLikeCount(0));
+      }
     }
   };
 

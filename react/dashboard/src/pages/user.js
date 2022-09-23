@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import Header from "../componets/header";
 import UserDetails from "../componets/userDetails";
+import { setLikeCount } from "../redux/actions/profileActions";
 
 const UserPage = () => {
-  const [likeCounter, setLikeCounter] = useState(0);
+  const dipatch = useDispatch();
   useEffect(() => {
     const likesArray = JSON.parse(localStorage.getItem("likes")) || [];
-    setLikeCounter(likesArray.length);
+    dipatch(setLikeCount(likesArray.length));
   }, []);
   return (
     <div>
-      <Header numberOfLikes={likeCounter} />
-      <UserDetails setLikeCounter={setLikeCounter} />
+      <Header />
+      <UserDetails />
     </div>
   );
 };
