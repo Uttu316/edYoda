@@ -19,7 +19,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setToken } from "../../redux/actions/profileActions";
 import { useNavigate } from "react-router-dom";
 
-const Header = ({}) => {
+const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [anchorElNav, setAnchorElNav] = useState(null);

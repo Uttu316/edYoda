@@ -6,6 +6,7 @@ const PrivateRoute = ({ element }) => {
   let isLoggedIn = useAuth();
   return isLoggedIn ? element : <Navigate to="/login" replace={true} />;
 };
+
 export const ProtectedRoute = ({ element }) => {
   let isLoggedIn = useAuth();
   const { pathname } = useLocation();

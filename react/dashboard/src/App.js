@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NotFound from "./componets/notFound";
 import { Provider } from "react-redux";
 import store from "./redux";
-import PrivateRoute from "./componets/privateRoute";
 import { ROUTES } from "./utils/routesConfig";
 
 const App = () => {
