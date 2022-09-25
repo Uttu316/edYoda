@@ -4,6 +4,7 @@ import List from "../componets/list";
 import { useDispatch } from "react-redux";
 import { setLikeCount } from "../redux/actions/profileActions";
 import Slider from "../componets/slider";
+import Barchart from "../componets/charts/barChart";
 
 const Home = (props) => {
   const dipatch = useDispatch();
@@ -18,6 +19,7 @@ const Home = (props) => {
       <Header />
       <Slider />
       <List />
+      <Barchart />
     </div>
   );
 };
