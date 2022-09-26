@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { setLikeCount } from "../redux/actions/profileActions";
 import Slider from "../componets/slider";
 import Barchart from "../componets/charts/barChart";
+import PieChart from "../componets/charts/pieChart";
 
 const Home = (props) => {
   const dipatch = useDispatch();
@@ -20,6 +21,7 @@ const Home = (props) => {
       <Slider />
       <List />
       <Barchart />
+      <PieChart />
     </div>
   );
 };

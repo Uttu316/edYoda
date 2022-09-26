@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const style = {
   padding: 8,
 };
-const Form = () => {
+const Form = (props) => {
+  const ref = useRef();
+  const emailRef = useRef();
+  const valueRef = useRef(0);
   const [user, setUser] = useState({
     name: "",
     age: "",
@@ -17,7 +20,12 @@ const Form = () => {
     const newObj = { ...user, [name]: value };
     setUser(newObj);
   };
-
+  useEffect(() => {
+    if (ref.current) {
+      ref.current.style.backgroundColor = "red";
+      emailRef.current.style.backgroundColor = "green";
+    }
+  }, [ref.current, emailRef.current]);
   return (
     <div>
       <input
@@ -26,6 +34,8 @@ const Form = () => {
         name="name"
         placeholder="Name"
         onChange={setForm}
+        ref={ref}
+        onBlur={() => (valueRef.current += 2)}
       />
       <input
         style={style}
@@ -33,6 +43,7 @@ const Form = () => {
         name="age"
         placeholder="Age"
         onChange={setForm}
+        onBlur={() => (valueRef.current += 2)}
       />
       <input
         value={user.email}
@@ -40,6 +51,8 @@ const Form = () => {
         name="email"
         placeholder="Email"
         onChange={setForm}
+        ref={emailRef}
+        onBlur={() => (valueRef.current += 2)}
       />
       <input
         value={user.phone}
@@ -47,6 +60,7 @@ const Form = () => {
         name="phone"
         placeholder="Phone"
         onChange={setForm}
+        onBlur={() => (valueRef.current += 2)}
       />
       <ChildForm setUser={setUser} />
     </div>

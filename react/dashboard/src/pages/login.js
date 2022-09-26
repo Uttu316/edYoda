@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useRef, useState } from "react";
 import Avatar from "@mui/material/Avatar";
 import { Button, Snackbar, CircularProgress } from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -14,6 +14,8 @@ import { useDispatch } from "react-redux";
 import { setToken } from "../redux/actions/profileActions";
 
 export default function Login({}) {
+  const ref = useRef();
+
   const [formDetails, setFormDetails] = useState({
     email: "",
     password: "",
@@ -31,7 +33,7 @@ export default function Login({}) {
 
   const dipatch = useDispatch();
 
-  const handleOnChange = (event) => {
+  const handleOnChange = useCallback((event) => {
     const { value, name } = event.target;
     // Task: Complete  validations
     if (name === "password") {
@@ -46,7 +48,7 @@ export default function Login({}) {
       }
     }
     setFormDetails((prevValues) => ({ ...prevValues, [name]: value }));
-  };
+  }, []);
 
   const onSubmit = (event) => {
     event.preventDefault();
@@ -78,6 +80,7 @@ export default function Login({}) {
         setIsLoading(false);
       });
   };
+
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />

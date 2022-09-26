@@ -10,12 +10,12 @@ import Home from "./pages/home";
 const MyApp = (props) => {
   return (
     <div>
-      {/* <Form /> */}
+      <Form />
       {/* <Counter heading="My Counter" /> */}
       {/* <Home /> */}
       {/* <ErrorBoundaryExample /> */}
-      <NewClassCounter />
-      <ReduxList />
+      {/* <NewClassCounter />
+      <ReduxList /> */}
     </div>
   );
 };
